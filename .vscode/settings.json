@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/obj": true,
+        "**/*.sln": true,
+        "**/.vs" : true,
+        "**/bin": true,
+        "**/dist": true,
+        "**/tmp": true
+    }
+
+}
