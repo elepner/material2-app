@@ -1,3 +1,9 @@
+"use strict";
+
+// SystemJS configuration file, see links for more information
+// https://github.com/systemjs/systemjs
+// https://github.com/systemjs/systemjs/blob/master/docs/config-api.md
+
 /***********************************************************************************************
  * User Configuration.
  **********************************************************************************************/
@@ -27,9 +33,9 @@ const materialComponents = [
   'toolbar',
   'tooltip',
 ];
-
-
-let packages = {};
+/** User packages configuration. */
+const packages: any = {
+};
 materialComponents.forEach(name => {
   packages[`@angular2-material/${name}`] = {
     format: 'cjs',
@@ -37,7 +43,6 @@ materialComponents.forEach(name => {
     main: `${name}.js`,
   };
 });
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
@@ -62,9 +67,9 @@ const barrels: string[] = [
   /** @cli-barrel */
 ];
 
-const _cliSystemConfig = {};
+const cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
-  _cliSystemConfig[barrelName] = { main: 'index' };
+  cliSystemConfigPackages[barrelName] = { main: 'index' };
 });
 
 /** Type declaration for ambient System. */
@@ -77,7 +82,7 @@ System.config({
     'rxjs': 'vendor/rxjs',
     'main': 'main.js'
   },
-  packages: _cliSystemConfig
+  packages: cliSystemConfigPackages
 });
 
 // Apply the user's configuration.
