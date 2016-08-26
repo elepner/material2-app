@@ -26,8 +26,7 @@ import {OverlayModule} from '@angular2-material/core/overlay/overlay-directives'
 import {MdMenuModule} from '@angular2-material/menu/menu';
 import {RtlModule} from '@angular2-material/core/rtl/dir';
 import {Material2AppAppComponent} from './app/';
-
-
+import {MdDataTable, MdDataTableHeaderSelectableRow} from './app/data-table';
 
 @NgModule({
   imports: [
@@ -53,9 +52,9 @@ import {Material2AppAppComponent} from './app/';
     MdTooltipModule,
     OverlayModule,
     PortalModule,
-    RtlModule,
+    RtlModule
   ],
-  declarations: [Material2AppAppComponent],
+  declarations: [Material2AppAppComponent, MdDataTable,MdDataTableHeaderSelectableRow],
   entryComponents: [Material2AppAppComponent],
 })
 export class MaterialAppModule {
